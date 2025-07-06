@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the engine bean -->
+    <bean id="engine" class="com.example.di.Engine" />
+
+    <!-- Constructor Injection -->
+    <bean id="carConstructor" class="com.example.di.Car">
+        <constructor-arg ref="engine"/>
+    </bean>
+
+    <!-- Setter Injection -->
+    <bean id="carSetter" class="com.example.di.Car">
+        <property name="engine" ref="engine"/>
+    </bean>
+
+</beans>
